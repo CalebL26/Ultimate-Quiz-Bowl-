@@ -252,7 +252,172 @@ marketing_questions = [
 cursor.executemany (''' INSERT INTO databaseQA.db  (question, option_a, option_b, option_c, option_d, correct answer
                    VALUES(?,?,?,?,?,?)''', marketing_questions)
 
+cursor.execute ('''CREATE TABLE IF NOT EXISTS Bstatstb(
+                id INTEGER PRIMARKY KEY TEXT AUTOINCRIMENT,
+                question TEXT NOT NULL,
+                option_a TEXT NOT NULL, 
+                option_b TEXT NOT NULL, 
+                option_c TEXT NOT NULL, 
+                option_d TEXT NOT NULL, 
+                answer TEXT NOT NULL ''')
 
+BstatsQuestions = [
+    ("What is the mean of a dataset?",
+     "A) The middle value of the dataset",
+      "B) The most frequent value in the dataset",
+      "C) The sum of all values in the dataset divided by the number of values",
+      "D) The difference between the highest and lowest values in the dataset",
+      "C. The sum of all values in the dataset divided by the number of values"),
+
+    ("What is the median of a dataset?",
+     "A) The middle value of the dataset",
+      "B) The most frequent value in the dataset",
+      "C) The sum of all values in the dataset divided by the number of values",
+      "D) The difference between the highest and lowest values in the dataset",
+      "A. The middle value of the dataset"),
+
+    ("What does standard deviation measure?",
+     "A) The range of values in the dataset",
+      "B) The average deviation from the mean in the dataset",
+      "C) The frequency of values in the dataset",
+      "D) The spread of values around the mean in the dataset",
+      "D. The spread of values around the mean in the dataset"),
+
+    ("What is the formula for calculating variance?",
+     "A) Sum of squared deviations from the mean divided by the sample size",
+      "B) Sum of deviations from the mean divided by the sample size",
+      "C) Sum of squared deviations from the mean",
+      "D) Sum of deviations from the mean",
+      "A. Sum of squared deviations from the mean divided by the sample size"),
+
+    ("What is a histogram used for?",
+     "A) Displaying categorical data",
+      "B) Comparing two or more datasets",
+      "C) Representing the distribution of numerical data",
+      "D) Showing relationships between variables",
+      "C. Representing the distribution of numerical data"),
+
+    ("What does correlation measure?",
+     "A) The strength and direction of the relationship between two variables",
+      "B) The spread of values around the mean in the dataset",
+      "C) The frequency of values in the dataset",
+      "D) The range of values in the dataset",
+      "A. The strength and direction of the relationship between two variables"),
+
+    ("What is a confidence interval?",
+     "A) A range of values used to estimate a population parameter",
+      "B) The mean of a dataset",
+      "C) The median of a dataset",
+      "D) The standard deviation of a dataset",
+      "A. A range of values used to estimate a population parameter"),
+
+    ("What is the central limit theorem?",
+     "A) It states that the mean of a sufficiently large sample will be approximately normally distributed",
+      "B) It defines the average value of a dataset",
+      "C) It measures the spread of values around the mean",
+      "D) It compares two or more datasets",
+      "A. It states that the mean of a sufficiently large sample will be approximately normally distributed"),
+
+    ("What is a p-value?",
+     "A) The probability of obtaining a sample statistic as extreme as the one observed, assuming the null hypothesis is true",
+      "B) The average value of a dataset",
+      "C) The median of a dataset",
+      "D) The standard deviation of a dataset",
+      "A. The probability of obtaining a sample statistic as extreme as the one observed, assuming the null hypothesis is true"),
+
+    ("What is regression analysis used for?",
+     "A) Predicting future values based on historical data",
+      "B) Comparing two or more datasets",
+      "C) Representing the distribution of numerical data",
+      "D) Testing hypotheses about population parameters",
+      "A. Predicting future values based on historical data")
+]
+
+cursor.executemany (''' INSERT INTO databaseQA.db  (question, option_a, option_b, option_c, option_d, correct answer
+                   VALUES(?,?,?,?,?,?)''', BstatsQuestions)
+
+cursor.execute(''' IF TABLE DOES NOT EXISTS  BAPPtb(
+               id INTEGER PRIMARKY KEY TEXT AUTOINCRIMENT,
+                question TEXT NOT NULL,
+                option_a TEXT NOT NULL, 
+                option_b TEXT NOT NULL, 
+                option_c TEXT NOT NULL, 
+                option_d TEXT NOT NULL, 
+                answer TEXT NOT NULL ''')
+BAPP_questions = python_github_questions = [
+    ("What is Python?",
+     "A) A high-level programming language",
+      "B) A database management system",
+      "C) A web browser",
+      "D) An operating system",
+      "A. A high-level programming language"),
+
+    ("What is the primary purpose of indentation in Python?",
+     "A) It improves code readability",
+      "B) It adds spaces to the code",
+      "C) It changes the functionality of the code",
+      "D) It has no effect on Python code",
+      "A. It improves code readability"),
+
+    ("What is a variable in Python?",
+     "A) A reserved keyword",
+      "B) A container for storing data values",
+      "C) A mathematical operation",
+      "D) A built-in function",
+      "B. A container for storing data values"),
+
+    ("What is the correct way to start a Python comment?",
+     "A) // This is a comment",
+      "B) # This is a comment",
+      "C) /* This is a comment */",
+      "D) <!-- This is a comment -->",
+      "B. # This is a comment"),
+
+    ("What does the 'print' function do in Python?",
+     "A) Reads user input",
+      "B) Executes a block of code",
+      "C) Displays output to the console",
+      "D) Performs mathematical calculations",
+      "C. Displays output to the console"),
+
+    ("What is Git?",
+     "A) A version control system",
+      "B) A programming language",
+      "C) An operating system",
+      "D) A web browser",
+      "A. A version control system"),
+
+    ("What is a repository in Git?",
+     "A) A folder that contains project files and metadata",
+      "B) A type of programming language",
+      "C) A software development methodology",
+      "D) A programming paradigm",
+      "A. A folder that contains project files and metadata"),
+
+    ("What command is used to initialize a Git repository?",
+     "A) git commit",
+      "B) git init",
+      "C) git clone",
+      "D) git add",
+      "B. git init"),
+
+    ("What does the 'git add' command do?",
+     "A) Initializes a new repository",
+      "B) Stages changes for commit",
+      "C) Deletes a repository",
+      "D) Clones a repository from a remote location",
+      "B. Stages changes for commit"),
+
+    ("What is a pull request in GitHub?",
+     "A) A request to merge changes from one branch to another",
+      "B) A request to delete a repository",
+      "C) A request to create a new repository",
+      "D) A request to fork a repository",
+      "A. A request to merge changes from one branch to another")
+]
+
+cursor.executemany(''' INSERT INTO databaseQA.db  (question, option_a, option_b, option_c, option_d, correct answer
+                   VALUES(?,?,?,?,?,?)''', BAPP_questions)
 
 conn.commit()
 
